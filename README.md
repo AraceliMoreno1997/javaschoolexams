@@ -11,8 +11,8 @@ The exam includes 3 tasks to be done. Please, choose 3 of 5: [Calculator](/tasks
 
 ### Result ###
 
-* Author name : {PUT YOUR NAME HERE}
-* Pipeline status: {PUT A BADGE HERE}
+* Author name : Araceli Moreno Cantizani
+* Pipeline status: ![test passing](https://badgen.net/badge/tests/passing/green)
 
 
 ### How to start?  ###

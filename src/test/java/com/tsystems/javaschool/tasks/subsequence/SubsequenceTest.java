@@ -9,60 +9,59 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-
 public class SubsequenceTest {
 
     private Subsequence subsequence = new Subsequence();
 
     @Test
     public void find0() {
-        //given
+        // given
         List x = Stream.of(1, 3, 5, 7, 9).collect(toList());
         List y = Stream.of(10, 1, 2, 3, 4, 5, 7, 9, 20).collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertTrue(result);
     }
 
     @Test
     public void find00() {
-        //given
+        // given
         List x = Stream.of(1, 3, 5, 7, 9).collect(toList());
         List y = Stream.of(10, 1, 2, 3, 4, 3, 5, 7, 9, 20).collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertTrue(result);
     }
 
     @Test
     public void find() {
-        //given
+        // given
         List x = Stream.of(1, 3, 5, 7, 9).collect(toList());
         List y = Stream.of(1, 2, 3, 4, 5, 7, 9, 20).collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertTrue(result);
     }
 
     @Test
     public void find1() {
-        //given
+        // given
         List x = Stream.of(1, 2, 3, 4, 5, 7, 9, 20).collect(toList());
         List y = Stream.of(1, 3, 5, 7, 9).collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertFalse(result);
     }
 
@@ -71,14 +70,14 @@ public class SubsequenceTest {
      */
     @Test
     public void find2() {
-        //given
+        // given
         List x = Stream.of(3, 9, 1, 5, 7).collect(toList());
         List y = Stream.of(1, 2, 3, 4, 5, 7, 9, 20).collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertFalse(result);
     }
 
@@ -87,92 +86,91 @@ public class SubsequenceTest {
      */
     @Test
     public void find3() {
-        //given
+        // given
         List x = Stream.of("B", "A", "D", "C").collect(toList());
         List y = Stream.of("BD", "A", "ABC", "B", "M", "D", "M", "C", "DC", "D").collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertFalse(result);
     }
 
     @Test
     public void find4() {
-        //given
+        // given
         List x = Stream.of("B", "A", "D", "C").collect(toList());
         List y = Stream.of("BD", "ABC", "B", "M", "D", "M", "C", "DC", "D").collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertFalse(result);
     }
 
     @Test
     public void find5() {
-        //given
+        // given
         List x = new ArrayList();
         List y = Stream.of("BD", "ABC", "B", "M", "D", "M", "C", "DC", "D").collect(toList());
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertTrue(result);
     }
 
     @Test
     public void find6() {
-        //given
+        // given
         List x = new ArrayList();
         List y = new ArrayList();
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertTrue(result);
     }
 
     @Test
     public void find7() {
-        //given
+        // given
         List x = Stream.of("B", "A", "D", "C").collect(toList());
         List y = new ArrayList();
 
-        //run
+        // run
         boolean result = subsequence.find(x, y);
 
-        //assert
+        // assert
         Assert.assertFalse(result);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void find8() {
-        //given
+        // given
         List x = null;
         List y = new ArrayList();
 
-        //run
+        // run
         subsequence.find(x, y);
 
-        //assert: exception
+        // assert: exception
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void find9() {
-        //given
+        // given
         List x = new ArrayList();
         List y = null;
 
-        //run
+        // run
         subsequence.find(x, y);
 
-        //assert: exception
+        // assert: exception
     }
-
 
 }
